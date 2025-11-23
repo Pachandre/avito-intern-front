@@ -54,7 +54,11 @@ export function rejectAd(
 
     const response = fetch(`${BASE}/${req.id}/reject`, {
         method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
         body: JSON.stringify(body),
     });
+
     return response.then((res) => res.json());
 }
