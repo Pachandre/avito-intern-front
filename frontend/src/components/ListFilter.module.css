@@ -1,0 +1,29 @@
+.container {
+    padding: 4px 8px;
+    height: 100%;
+    width: 256px;
+}
+
+.filters {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 4px;
+}
+
+.priceRange {
+    display: flex;
+    justify-content: stretch;
+    gap: 8px;
+}
+
+.sort {
+    display: flex;
+    gap: 2px;
+}
+
+.status-select {
+    min-width: 20ch;
+    max-width: 50ch;
+}

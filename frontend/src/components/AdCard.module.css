@@ -1,0 +1,109 @@
+.ad-card {
+    display: grid;
+    grid-template-areas:
+        "imag titl titl"
+        "imag pric pric"
+        "imag meta dets";
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: min-content 1fr auto;
+    gap: 8px;
+    overflow: hidden;
+    padding: 16px;
+    height: 200px;
+}
+
+.title {
+    grid-area: titl;
+    height: min-content;
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.price {
+    grid-area: pric;
+    align-self: flex-end;
+    justify-self: end;
+    display: flex;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.image {
+    display: flex;
+    grid-area: imag;
+    height: 168px;
+    width: 168px;
+    border-radius: 8px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    place-content: center;
+}
+
+.meta {
+    grid-area: meta;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category {
+}
+
+.details {
+    grid-area: dets;
+    align-self: end;
+}
+
+@media screen and (max-width: 550px) {
+    .ad-card {
+        grid-template-areas:
+            "imag titl titl"
+            "imag meta pric"
+            "imag dets dets";
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .details button {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .ad-card {
+        width: 100%;
+        height: auto;
+        grid-template-areas: none;
+        grid-template-rows: subgrid;
+        grid-template-columns: 1fr;
+        grid-row: span 5;
+        grid-column: auto;
+        padding: 0;
+        width: 100%;
+        gap: 0;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        grid-row: 1;
+    }
+    .title {
+        grid-row: 2;
+    }
+    .price {
+        grid-row: 3;
+    }
+    .meta {
+        grid-row: 4;
+    }
+    .details {
+        grid-row: 5;
+    }
+}
