@@ -147,6 +147,7 @@ export default function ListFilter() {
                 <Input
                     allowClear
                     type="text"
+                    placeholder="ID категории"
                     value={filters.categoryId?.toString()}
                     onChange={(e) => {
                         const id = parseInt(e.target.value);

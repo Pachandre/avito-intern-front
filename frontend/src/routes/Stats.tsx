@@ -81,7 +81,6 @@ export default function Stats() {
         (summary && round(summary.approvedPercentage, 1) + "%") ?? "";
     const rejected =
         (summary && round(summary.rejectedPercentage, 1) + "%") ?? "";
-    console.log(summary?.averageReviewTime);
     const averageTime =
         (summary && round(summary.averageReviewTime / 60, 1) + " мин") ?? "";
 

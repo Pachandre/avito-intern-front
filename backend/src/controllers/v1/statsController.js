@@ -267,11 +267,8 @@ const getSummaryStats = (req, res) => {
 
 const getActivityChart = (req, res) => {
     try {
-        console.log(req.query);
         const { period, startDate, endDate } = req.query;
-        console.log(period, startDate, endDate);
         const dateRange = getDateRange(period, startDate, endDate);
-        console.log(dateRange);
 
         const chartData = calculateActivityChart(dataStore.ads, dateRange);
         res.json(chartData);
