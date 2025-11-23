@@ -28,6 +28,11 @@
 
 ## Запуск
 
+```bash
+git clone https://github.com/Pachandre/avito-intern-front.git
+cd avito-intern-front
+```
+
 ### Локальный запуск без Docker
 
 #### 1. Запуск Backend API
@@ -64,7 +69,7 @@ docker-compose up
 
 Сервисы будут доступны:
 
--   Frontend: `http://localhost:5173`
+-   Frontend: `http://localhost`
 -   Backend API: `http://localhost:3001`
 
 ### Остановка контейнеров
