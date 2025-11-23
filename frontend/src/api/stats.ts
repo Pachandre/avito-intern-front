@@ -6,10 +6,12 @@ const BASE = `${API_BASE}/stats`;
 export function fetchSummary(
     req: TRequests["StatsSummary"]
 ): Promise<TResponses["StatsSummary"]> {
-    const url = new URL(`${BASE}/summary`);
-    if (req.period) url.searchParams.set("period", req.period);
-    if (req.startDate) url.searchParams.set("startDate", req.startDate);
-    if (req.endDate) url.searchParams.set("endDate", req.endDate);
+    const params = new URLSearchParams();
+    if (req.period) params.set("period", req.period);
+    if (req.startDate) params.set("startDate", req.startDate);
+    if (req.endDate) params.set("endDate", req.endDate);
+
+    const url = `${BASE}/summary?${params.toString()}`;
 
     const response = fetch(url);
     return response.then((res) => res.json());
@@ -18,10 +20,12 @@ export function fetchSummary(
 export function fetchActivity(
     req: TRequests["StatsActivity"]
 ): Promise<TResponses["StatsActivity"]> {
-    const url = new URL(`${BASE}/chart/activity`);
-    if (req.period) url.searchParams.set("period", req.period);
-    if (req.startDate) url.searchParams.set("startDate", req.startDate);
-    if (req.endDate) url.searchParams.set("endDate", req.endDate);
+    const params = new URLSearchParams();
+    if (req.period) params.set("period", req.period);
+    if (req.startDate) params.set("startDate", req.startDate);
+    if (req.endDate) params.set("endDate", req.endDate);
+
+    const url = `${BASE}/chart/activity?${params.toString()}`;
 
     const response = fetch(url);
     return response.then((res) => res.json());
@@ -30,10 +34,12 @@ export function fetchActivity(
 export function fetchDecisions(
     req: TRequests["StatsDecisions"]
 ): Promise<TResponses["StatsDecisions"]> {
-    const url = new URL(`${BASE}/chart/decisions`);
-    if (req.period) url.searchParams.set("period", req.period);
-    if (req.startDate) url.searchParams.set("startDate", req.startDate);
-    if (req.endDate) url.searchParams.set("endDate", req.endDate);
+    const params = new URLSearchParams();
+    if (req.period) params.set("period", req.period);
+    if (req.startDate) params.set("startDate", req.startDate);
+    if (req.endDate) params.set("endDate", req.endDate);
+
+    const url = `${BASE}/chart/decisions?${params.toString()}`;
 
     const response = fetch(url);
     return response.then((res) => res.json());
@@ -42,11 +48,12 @@ export function fetchDecisions(
 export function fetchCategories(
     req: TRequests["StatsCategories"]
 ): Promise<TResponses["StatsCategories"]> {
-    const url = new URL(`${BASE}/chart/categories`);
-    if (req.period) url.searchParams.set("period", req.period);
-    if (req.startDate) url.searchParams.set("startDate", req.startDate);
-    if (req.endDate) url.searchParams.set("endDate", req.endDate);
+    const params = new URLSearchParams();
+    if (req.period) params.set("period", req.period);
+    if (req.startDate) params.set("startDate", req.startDate);
+    if (req.endDate) params.set("endDate", req.endDate);
 
+    const url = `${BASE}/chart/categories?${params.toString()}`;
     const response = fetch(url);
     return response.then((res) => res.json());
 }
